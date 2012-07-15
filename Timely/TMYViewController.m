@@ -13,6 +13,10 @@
 @end
 
 @implementation TMYViewController
+@synthesize OneMinuteLabel;
+@synthesize TenMinuteLabel;
+@synthesize TenSecondLabel;
+@synthesize OneSecondLabel;
 
 - (void)viewDidLoad
 {
@@ -22,6 +26,10 @@
 
 - (void)viewDidUnload
 {
+    [self setOneMinuteLabel:nil];
+    [self setTenMinuteLabel:nil];
+    [self setTenSecondLabel:nil];
+    [self setOneSecondLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
