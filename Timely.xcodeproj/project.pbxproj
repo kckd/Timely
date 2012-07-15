@@ -1,0 +1,464 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C96F90BC15B2A5DD00AC2847 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BB15B2A5DD00AC2847 /* UIKit.framework */; };
+		C96F90BE15B2A5DD00AC2847 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BD15B2A5DD00AC2847 /* Foundation.framework */; };
+		C96F90C015B2A5DD00AC2847 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BF15B2A5DD00AC2847 /* CoreGraphics.framework */; };
+		C96F90C615B2A5DD00AC2847 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96F90C415B2A5DD00AC2847 /* InfoPlist.strings */; };
+		C96F90C815B2A5DD00AC2847 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90C715B2A5DD00AC2847 /* main.m */; };
+		C96F90CC15B2A5DD00AC2847 /* TMYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90CB15B2A5DD00AC2847 /* TMYAppDelegate.m */; };
+		C96F90CF15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96F90CD15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard */; };
+		C96F90D215B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96F90D015B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard */; };
+		C96F90D515B2A5DD00AC2847 /* TMYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90D415B2A5DD00AC2847 /* TMYViewController.m */; };
+		C96F90DD15B2A5DE00AC2847 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90DC15B2A5DE00AC2847 /* SenTestingKit.framework */; };
+		C96F90DE15B2A5DE00AC2847 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BB15B2A5DD00AC2847 /* UIKit.framework */; };
+		C96F90DF15B2A5DE00AC2847 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BD15B2A5DD00AC2847 /* Foundation.framework */; };
+		C96F90E715B2A5DE00AC2847 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */; };
+		C96F90EA15B2A5DE00AC2847 /* TimelyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90E915B2A5DE00AC2847 /* TimelyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C96F90E015B2A5DE00AC2847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C96F90AE15B2A5DD00AC2847 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C96F90B615B2A5DD00AC2847;
+			remoteInfo = Timely;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C96F90B715B2A5DD00AC2847 /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96F90BB15B2A5DD00AC2847 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C96F90BD15B2A5DD00AC2847 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C96F90BF15B2A5DD00AC2847 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C96F90C315B2A5DD00AC2847 /* Timely-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Timely-Info.plist"; sourceTree = "<group>"; };
+		C96F90C515B2A5DD00AC2847 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C96F90C715B2A5DD00AC2847 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C96F90C915B2A5DD00AC2847 /* Timely-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Timely-Prefix.pch"; sourceTree = "<group>"; };
+		C96F90CA15B2A5DD00AC2847 /* TMYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMYAppDelegate.h; sourceTree = "<group>"; };
+		C96F90CB15B2A5DD00AC2847 /* TMYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMYAppDelegate.m; sourceTree = "<group>"; };
+		C96F90CE15B2A5DD00AC2847 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C96F90D115B2A5DD00AC2847 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		C96F90D315B2A5DD00AC2847 /* TMYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMYViewController.h; sourceTree = "<group>"; };
+		C96F90D415B2A5DD00AC2847 /* TMYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMYViewController.m; sourceTree = "<group>"; };
+		C96F90DB15B2A5DE00AC2847 /* TimelyTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelyTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96F90DC15B2A5DE00AC2847 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C96F90E415B2A5DE00AC2847 /* TimelyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimelyTests-Info.plist"; sourceTree = "<group>"; };
+		C96F90E615B2A5DE00AC2847 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C96F90E815B2A5DE00AC2847 /* TimelyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelyTests.h; sourceTree = "<group>"; };
+		C96F90E915B2A5DE00AC2847 /* TimelyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C96F90B415B2A5DD00AC2847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96F90BC15B2A5DD00AC2847 /* UIKit.framework in Frameworks */,
+				C96F90BE15B2A5DD00AC2847 /* Foundation.framework in Frameworks */,
+				C96F90C015B2A5DD00AC2847 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C96F90D715B2A5DE00AC2847 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96F90DD15B2A5DE00AC2847 /* SenTestingKit.framework in Frameworks */,
+				C96F90DE15B2A5DE00AC2847 /* UIKit.framework in Frameworks */,
+				C96F90DF15B2A5DE00AC2847 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C96F90AC15B2A5DD00AC2847 = {
+			isa = PBXGroup;
+			children = (
+				C96F90C115B2A5DD00AC2847 /* Timely */,
+				C96F90E215B2A5DE00AC2847 /* TimelyTests */,
+				C96F90BA15B2A5DD00AC2847 /* Frameworks */,
+				C96F90B815B2A5DD00AC2847 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C96F90B815B2A5DD00AC2847 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90B715B2A5DD00AC2847 /* Timely.app */,
+				C96F90DB15B2A5DE00AC2847 /* TimelyTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C96F90BA15B2A5DD00AC2847 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90BB15B2A5DD00AC2847 /* UIKit.framework */,
+				C96F90BD15B2A5DD00AC2847 /* Foundation.framework */,
+				C96F90BF15B2A5DD00AC2847 /* CoreGraphics.framework */,
+				C96F90DC15B2A5DE00AC2847 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C96F90C115B2A5DD00AC2847 /* Timely */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90CA15B2A5DD00AC2847 /* TMYAppDelegate.h */,
+				C96F90CB15B2A5DD00AC2847 /* TMYAppDelegate.m */,
+				C96F90CD15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard */,
+				C96F90D015B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard */,
+				C96F90D315B2A5DD00AC2847 /* TMYViewController.h */,
+				C96F90D415B2A5DD00AC2847 /* TMYViewController.m */,
+				C96F90C215B2A5DD00AC2847 /* Supporting Files */,
+			);
+			path = Timely;
+			sourceTree = "<group>";
+		};
+		C96F90C215B2A5DD00AC2847 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90C315B2A5DD00AC2847 /* Timely-Info.plist */,
+				C96F90C415B2A5DD00AC2847 /* InfoPlist.strings */,
+				C96F90C715B2A5DD00AC2847 /* main.m */,
+				C96F90C915B2A5DD00AC2847 /* Timely-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C96F90E215B2A5DE00AC2847 /* TimelyTests */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90E815B2A5DE00AC2847 /* TimelyTests.h */,
+				C96F90E915B2A5DE00AC2847 /* TimelyTests.m */,
+				C96F90E315B2A5DE00AC2847 /* Supporting Files */,
+			);
+			path = TimelyTests;
+			sourceTree = "<group>";
+		};
+		C96F90E315B2A5DE00AC2847 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90E415B2A5DE00AC2847 /* TimelyTests-Info.plist */,
+				C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C96F90B615B2A5DD00AC2847 /* Timely */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C96F90ED15B2A5DE00AC2847 /* Build configuration list for PBXNativeTarget "Timely" */;
+			buildPhases = (
+				C96F90B315B2A5DD00AC2847 /* Sources */,
+				C96F90B415B2A5DD00AC2847 /* Frameworks */,
+				C96F90B515B2A5DD00AC2847 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timely;
+			productName = Timely;
+			productReference = C96F90B715B2A5DD00AC2847 /* Timely.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C96F90DA15B2A5DE00AC2847 /* TimelyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C96F90F015B2A5DE00AC2847 /* Build configuration list for PBXNativeTarget "TimelyTests" */;
+			buildPhases = (
+				C96F90D615B2A5DE00AC2847 /* Sources */,
+				C96F90D715B2A5DE00AC2847 /* Frameworks */,
+				C96F90D815B2A5DE00AC2847 /* Resources */,
+				C96F90D915B2A5DE00AC2847 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C96F90E115B2A5DE00AC2847 /* PBXTargetDependency */,
+			);
+			name = TimelyTests;
+			productName = TimelyTests;
+			productReference = C96F90DB15B2A5DE00AC2847 /* TimelyTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C96F90AE15B2A5DD00AC2847 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TMY;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Deloitte Digital";
+			};
+			buildConfigurationList = C96F90B115B2A5DD00AC2847 /* Build configuration list for PBXProject "Timely" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C96F90AC15B2A5DD00AC2847;
+			productRefGroup = C96F90B815B2A5DD00AC2847 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C96F90B615B2A5DD00AC2847 /* Timely */,
+				C96F90DA15B2A5DE00AC2847 /* TimelyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C96F90B515B2A5DD00AC2847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96F90C615B2A5DD00AC2847 /* InfoPlist.strings in Resources */,
+				C96F90CF15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard in Resources */,
+				C96F90D215B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C96F90D815B2A5DE00AC2847 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96F90E715B2A5DE00AC2847 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C96F90D915B2A5DE00AC2847 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C96F90B315B2A5DD00AC2847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96F90C815B2A5DD00AC2847 /* main.m in Sources */,
+				C96F90CC15B2A5DD00AC2847 /* TMYAppDelegate.m in Sources */,
+				C96F90D515B2A5DD00AC2847 /* TMYViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C96F90D615B2A5DE00AC2847 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C96F90EA15B2A5DE00AC2847 /* TimelyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C96F90E115B2A5DE00AC2847 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C96F90B615B2A5DD00AC2847 /* Timely */;
+			targetProxy = C96F90E015B2A5DE00AC2847 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C96F90C415B2A5DD00AC2847 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96F90C515B2A5DD00AC2847 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C96F90CD15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96F90CE15B2A5DD00AC2847 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C96F90D015B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96F90D115B2A5DD00AC2847 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96F90E615B2A5DE00AC2847 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C96F90EB15B2A5DE00AC2847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C96F90EC15B2A5DE00AC2847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C96F90EE15B2A5DE00AC2847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timely/Timely-Prefix.pch";
+				INFOPLIST_FILE = "Timely/Timely-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C96F90EF15B2A5DE00AC2847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timely/Timely-Prefix.pch";
+				INFOPLIST_FILE = "Timely/Timely-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C96F90F115B2A5DE00AC2847 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Timely.app/Timely";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timely/Timely-Prefix.pch";
+				INFOPLIST_FILE = "TimelyTests/TimelyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C96F90F215B2A5DE00AC2847 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Timely.app/Timely";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Timely/Timely-Prefix.pch";
+				INFOPLIST_FILE = "TimelyTests/TimelyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C96F90B115B2A5DD00AC2847 /* Build configuration list for PBXProject "Timely" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96F90EB15B2A5DE00AC2847 /* Debug */,
+				C96F90EC15B2A5DE00AC2847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C96F90ED15B2A5DE00AC2847 /* Build configuration list for PBXNativeTarget "Timely" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96F90EE15B2A5DE00AC2847 /* Debug */,
+				C96F90EF15B2A5DE00AC2847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C96F90F015B2A5DE00AC2847 /* Build configuration list for PBXNativeTarget "TimelyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96F90F115B2A5DE00AC2847 /* Debug */,
+				C96F90F215B2A5DE00AC2847 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C96F90AE15B2A5DD00AC2847 /* Project object */;
+}
