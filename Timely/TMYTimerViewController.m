@@ -7,6 +7,7 @@
 //
 
 #import "TMYTimerViewController.h"
+#import "TMYTimerMutableArray.h"
 
 @interface TMYTimerViewController ()
 
@@ -28,7 +29,21 @@ NSTimer *uiUpdateTimer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    timer = [[TMYTimer alloc] init];
+    if ([[TMYTimerMutableArray timers] count] > 0)
+    {
+        timer = [[TMYTimerMutableArray timers] objectAtIndex:0];
+        if (timer.Running)
+        {
+            [self startTimer];
+        } else
+        {
+            [self updateTimer];
+        }
+    } else
+    {
+        timer = [[TMYTimer alloc] init];
+        [[TMYTimerMutableArray timers] addObject:timer];
+    }
 }
 
 - (void)viewDidUnload
@@ -91,11 +106,15 @@ NSTimer *uiUpdateTimer;
     } else {
         [self stopTimer];
     }
+    [TMYTimerMutableArray saveTimers];
+    
+    
 }
 
 - (IBAction)onResetButtonTouched:(id)sender {
     [self stopTimer];
     [timer resetTimer];
+    [TMYTimerMutableArray saveTimers];
     self.TenMinuteLabel.text = 
     self.OneMinuteLabel.text = 
     self.TenSecondLabel.text = 

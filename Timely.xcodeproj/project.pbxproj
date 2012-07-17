@@ -22,6 +22,7 @@
 		C96F90E715B2A5DE00AC2847 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */; };
 		C96F90EA15B2A5DE00AC2847 /* TimelyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90E915B2A5DE00AC2847 /* TimelyTests.m */; };
 		C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FC15B592EA00AC2847 /* TMYTimer.m */; };
+		C96F910015B5D66A00AC2847 /* TMYTimerMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FF15B5D66A00AC2847 /* TMYTimerMutableArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		C96F90E915B2A5DE00AC2847 /* TimelyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelyTests.m; sourceTree = "<group>"; };
 		C96F90FB15B592EA00AC2847 /* TMYTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimer.h; sourceTree = "<group>"; };
 		C96F90FC15B592EA00AC2847 /* TMYTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimer.m; sourceTree = "<group>"; };
+		C96F90FE15B5D66A00AC2847 /* TMYTimerMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimerMutableArray.h; sourceTree = "<group>"; };
+		C96F90FF15B5D66A00AC2847 /* TMYTimerMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimerMutableArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 			children = (
 				C96F90FB15B592EA00AC2847 /* TMYTimer.h */,
 				C96F90FC15B592EA00AC2847 /* TMYTimer.m */,
+				C96F90FE15B5D66A00AC2847 /* TMYTimerMutableArray.h */,
+				C96F90FF15B5D66A00AC2847 /* TMYTimerMutableArray.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				C96F90CC15B2A5DD00AC2847 /* TMYAppDelegate.m in Sources */,
 				C96F90D515B2A5DD00AC2847 /* TMYTimerViewController.m in Sources */,
 				C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */,
+				C96F910015B5D66A00AC2847 /* TMYTimerMutableArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

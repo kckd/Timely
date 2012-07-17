@@ -29,6 +29,28 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)coder
+{
+    self = [super init];
+    
+    if (self) 
+    {
+        Name = [coder decodeObjectForKey:@"TMYName"];
+        Interval = [coder decodeIntForKey:@"TMYInterval"];
+        CurrentStartDate = [coder decodeObjectForKey:@"TMYCurrentStartDate"];
+        Running = [coder decodeBoolForKey:@"TMYRunning"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.Name forKey:@"TMYName"];
+    [coder encodeInt:self.Interval forKey:@"TMYInterval"];
+    [coder encodeObject:self.CurrentStartDate forKey:@"TMYCurrentStartDate"];
+    [coder encodeBool:self.Running forKey:@"TMYRunning"];
+}
+
 // This overrides the synthesized getter. The setter remains synthesized (and is called -(void)setInterval:(NSTimeInterval))
 // As clever as this seems, it probably isn't a good idea to have a getter
 // return something different from the ivar. See below for an example
