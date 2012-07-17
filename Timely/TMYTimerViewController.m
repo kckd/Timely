@@ -17,16 +17,18 @@
 @synthesize TenMinuteLabel;
 @synthesize TenSecondLabel;
 @synthesize OneSecondLabel;
+@synthesize StartStopButton;
 @synthesize startTime;
 @synthesize timer;
 
 #define UPDATE_INTERVAL 1.0/10 // 10ms
 
+BOOL timerRunning = NO;
+NSTimeInterval interval = 0;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    [self startTimer];
 }
 
 - (void)viewDidUnload
@@ -35,6 +37,7 @@
     [self setTenMinuteLabel:nil];
     [self setTenSecondLabel:nil];
     [self setOneSecondLabel:nil];
+    [self setStartStopButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -52,10 +55,12 @@
 {
     NSDate *currentTime = [NSDate date];
     
-    NSTimeInterval interval = [currentTime timeIntervalSinceDate:startTime];
+    NSTimeInterval currentInterval = [currentTime timeIntervalSinceDate:startTime];
     
-    int minutes = interval/60;
-    int seconds = interval-minutes;
+    currentInterval += interval;
+    
+    int minutes = currentInterval/60;
+    int seconds = currentInterval-minutes;
     
     self.TenMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes/10];
     self.OneMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes%10];
@@ -65,6 +70,8 @@
 
 -(void)startTimer
 {
+    self.StartStopButton.titleLabel.text = @"Stop";
+    
     startTime = [NSDate date];
     
     timer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
@@ -72,7 +79,25 @@
                                            selector:@selector(updateTimer)
                                            userInfo:nil
                                             repeats:YES];
-    
+    timerRunning = YES;
 }
 
+-(void)stopTimer
+{
+    self.StartStopButton.titleLabel.text = @"Start";
+    [timer invalidate];
+    timer = nil;
+    interval += [[NSDate date] timeIntervalSinceDate:startTime];
+    startTime = nil; // Mostly defensive
+    timerRunning = NO;
+}
+
+- (IBAction)onStartStopButtonTouched:(id)sender
+{
+    if (!timerRunning) {
+        [self startTimer];
+    } else {
+        [self stopTimer];
+    }
+}
 @end

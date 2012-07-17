@@ -15,8 +15,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *TenMinuteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *TenSecondLabel;
 @property (weak, nonatomic) IBOutlet UILabel *OneSecondLabel;
+@property (weak, nonatomic) IBOutlet UIButton *StartStopButton;
 
 @property (nonatomic,retain) NSDate *startTime;
 @property (nonatomic, retain) NSTimer *timer;
+
+
+- (IBAction)onStartStopButtonTouched:(id)sender;
 
 @end
