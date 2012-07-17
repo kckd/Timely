@@ -70,7 +70,7 @@ NSTimeInterval interval = 0;
 
 -(void)startTimer
 {
-    self.StartStopButton.titleLabel.text = @"Stop";
+    [self.StartStopButton setTitle:@"Stop" forState:UIControlStateNormal];
     
     startTime = [NSDate date];
     
@@ -84,7 +84,8 @@ NSTimeInterval interval = 0;
 
 -(void)stopTimer
 {
-    self.StartStopButton.titleLabel.text = @"Start";
+    [self.StartStopButton setTitle:@"Start" forState:UIControlStateNormal];
+
     [timer invalidate];
     timer = nil;
     interval += [[NSDate date] timeIntervalSinceDate:startTime];
@@ -99,5 +100,14 @@ NSTimeInterval interval = 0;
     } else {
         [self stopTimer];
     }
+}
+
+- (IBAction)onResetButtonTouched:(id)sender {
+    [self stopTimer];
+    interval = 0;
+    self.TenMinuteLabel.text = 
+    self.OneMinuteLabel.text = 
+    self.TenSecondLabel.text = 
+    self.OneSecondLabel.text = @"0";
 }
 @end

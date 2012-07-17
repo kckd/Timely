@@ -22,5 +22,6 @@
 
 
 - (IBAction)onStartStopButtonTouched:(id)sender;
+- (IBAction)onResetButtonTouched:(id)sender;
 
 @end
