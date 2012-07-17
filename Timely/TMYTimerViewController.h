@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TMYTimer.h"
 
 @interface TMYTimerViewController : UIViewController
 // Because our font isn't monospaced, we want to control each digit seperately to retain that
@@ -17,8 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *OneSecondLabel;
 @property (weak, nonatomic) IBOutlet UIButton *StartStopButton;
 
-@property (nonatomic,retain) NSDate *startTime;
-@property (nonatomic, retain) NSTimer *timer;
+@property (nonatomic, retain) TMYTimer *timer;
 
 
 - (IBAction)onStartStopButtonTouched:(id)sender;

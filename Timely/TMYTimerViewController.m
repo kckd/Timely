@@ -18,17 +18,17 @@
 @synthesize TenSecondLabel;
 @synthesize OneSecondLabel;
 @synthesize StartStopButton;
-@synthesize startTime;
 @synthesize timer;
 
 #define UPDATE_INTERVAL 1.0/10 // 10ms
 
-BOOL timerRunning = NO;
-NSTimeInterval interval = 0;
+NSTimer *uiUpdateTimer;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    timer = [[TMYTimer alloc] init];
 }
 
 - (void)viewDidUnload
@@ -53,14 +53,8 @@ NSTimeInterval interval = 0;
 
 -(void)updateTimer
 {
-    NSDate *currentTime = [NSDate date];
-    
-    NSTimeInterval currentInterval = [currentTime timeIntervalSinceDate:startTime];
-    
-    currentInterval += interval;
-    
-    int minutes = currentInterval/60;
-    int seconds = currentInterval-minutes;
+    int minutes = timer.Interval/60;
+    int seconds = timer.Interval-minutes;
     
     self.TenMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes/10];
     self.OneMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes%10];
@@ -72,30 +66,27 @@ NSTimeInterval interval = 0;
 {
     [self.StartStopButton setTitle:@"Stop" forState:UIControlStateNormal];
     
-    startTime = [NSDate date];
+    [timer startTimer];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
+    uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
                                              target:self
                                            selector:@selector(updateTimer)
                                            userInfo:nil
                                             repeats:YES];
-    timerRunning = YES;
 }
 
 -(void)stopTimer
 {
     [self.StartStopButton setTitle:@"Start" forState:UIControlStateNormal];
 
-    [timer invalidate];
-    timer = nil;
-    interval += [[NSDate date] timeIntervalSinceDate:startTime];
-    startTime = nil; // Mostly defensive
-    timerRunning = NO;
+    [uiUpdateTimer invalidate];
+    uiUpdateTimer = nil;
+    [timer stopTimer];
 }
 
 - (IBAction)onStartStopButtonTouched:(id)sender
 {
-    if (!timerRunning) {
+    if (!timer.Running) {
         [self startTimer];
     } else {
         [self stopTimer];
@@ -104,7 +95,7 @@ NSTimeInterval interval = 0;
 
 - (IBAction)onResetButtonTouched:(id)sender {
     [self stopTimer];
-    interval = 0;
+    [timer resetTimer];
     self.TenMinuteLabel.text = 
     self.OneMinuteLabel.text = 
     self.TenSecondLabel.text = 

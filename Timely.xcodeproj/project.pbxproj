@@ -21,6 +21,7 @@
 		C96F90DF15B2A5DE00AC2847 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BD15B2A5DD00AC2847 /* Foundation.framework */; };
 		C96F90E715B2A5DE00AC2847 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */; };
 		C96F90EA15B2A5DE00AC2847 /* TimelyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90E915B2A5DE00AC2847 /* TimelyTests.m */; };
+		C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FC15B592EA00AC2847 /* TMYTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		C96F90E615B2A5DE00AC2847 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C96F90E815B2A5DE00AC2847 /* TimelyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelyTests.h; sourceTree = "<group>"; };
 		C96F90E915B2A5DE00AC2847 /* TimelyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelyTests.m; sourceTree = "<group>"; };
+		C96F90FB15B592EA00AC2847 /* TMYTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimer.h; sourceTree = "<group>"; };
+		C96F90FC15B592EA00AC2847 /* TMYTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,7 @@
 		C96F90C115B2A5DD00AC2847 /* Timely */ = {
 			isa = PBXGroup;
 			children = (
+				C96F90F715B58ED400AC2847 /* Model */,
 				C96F90CA15B2A5DD00AC2847 /* TMYAppDelegate.h */,
 				C96F90CB15B2A5DD00AC2847 /* TMYAppDelegate.m */,
 				C96F90CD15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard */,
@@ -152,6 +156,15 @@
 				C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C96F90F715B58ED400AC2847 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C96F90FB15B592EA00AC2847 /* TMYTimer.h */,
+				C96F90FC15B592EA00AC2847 /* TMYTimer.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +279,7 @@
 				C96F90C815B2A5DD00AC2847 /* main.m in Sources */,
 				C96F90CC15B2A5DD00AC2847 /* TMYAppDelegate.m in Sources */,
 				C96F90D515B2A5DD00AC2847 /* TMYTimerViewController.m in Sources */,
+				C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
