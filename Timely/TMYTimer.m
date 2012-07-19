@@ -9,10 +9,10 @@
 #import "TMYTimer.h"
 
 @implementation TMYTimer
-@synthesize Name;
-@synthesize Interval;
-@synthesize CurrentStartDate;
-@synthesize Running;
+@synthesize name;
+@synthesize interval;
+@synthesize currentStartDate;
+@synthesize running;
 
 -(TMYTimer*)init
 {
@@ -23,8 +23,8 @@
     {
         //Init methods should never use the accessor methods, as the object is in a partially initialized state.
         // So you would never call self.Interval within init. The same rule applies to dealloc.
-        Interval = 0;
-        Running = NO;
+        interval = 0;
+        running = NO;
     }
     return self;
 }
@@ -35,20 +35,20 @@
     
     if (self) 
     {
-        Name = [coder decodeObjectForKey:@"TMYName"];
-        Interval = [coder decodeIntForKey:@"TMYInterval"];
-        CurrentStartDate = [coder decodeObjectForKey:@"TMYCurrentStartDate"];
-        Running = [coder decodeBoolForKey:@"TMYRunning"];
+        name = [coder decodeObjectForKey:@"TMYName"];
+        interval = [coder decodeIntForKey:@"TMYInterval"];
+        currentStartDate = [coder decodeObjectForKey:@"TMYCurrentStartDate"];
+        running = [coder decodeBoolForKey:@"TMYRunning"];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder
 {
-    [coder encodeObject:self.Name forKey:@"TMYName"];
-    [coder encodeInt:self.Interval forKey:@"TMYInterval"];
-    [coder encodeObject:self.CurrentStartDate forKey:@"TMYCurrentStartDate"];
-    [coder encodeBool:self.Running forKey:@"TMYRunning"];
+    [coder encodeObject:self.name forKey:@"TMYName"];
+    [coder encodeInt:self.interval forKey:@"TMYInterval"];
+    [coder encodeObject:self.currentStartDate forKey:@"TMYCurrentStartDate"];
+    [coder encodeBool:self.running forKey:@"TMYRunning"];
 }
 
 // This overrides the synthesized getter. The setter remains synthesized (and is called -(void)setInterval:(NSTimeInterval))
@@ -57,43 +57,43 @@
 // of why it is confusing.
 // The correct design would be to have a readonly Interval property, which would imply that the value it returns
 // is not directly settable.
--(NSTimeInterval)Interval
+-(NSTimeInterval)interval
 {
-    if (self.CurrentStartDate) {
+    if (self.currentStartDate) {
         // this illustrates an important difference between self.Interval and Interval.
         // self.Interval calls the property's getter method. Interval is the instance variable (ivar).
         // If I had used self.Interval, I would have gotten an infinite loop.
-        return Interval + [[NSDate date] timeIntervalSinceDate:CurrentStartDate];
+        return interval + [[NSDate date] timeIntervalSinceDate:currentStartDate];
     } else
-        return Interval;
+        return interval;
 }
 
 -(void)startTimer
 {
-    if (!self.Running)
+    if (!self.running)
     {
-        self.CurrentStartDate = [NSDate date];
-        self.Running = YES;
+        self.currentStartDate = [NSDate date];
+        self.running = YES;
     }
     
 }
 
 -(void)stopTimer
 {
-    self.Interval = self.Interval;  // Whoa. Don't do this. I did it this way to illustrate the difference between the
+    self.interval = self.interval;  // Whoa. Don't do this. I did it this way to illustrate the difference between the
                                     // synthesized setter and the overridden getter.
                                     // It takes advantage of a side effect of the getter (it adds the value of the ivar to the
                                     // current interval since the start date). It also illustrates why having a getter that
                                     // returns a different value than you pass in to the setter gets confusing really fast.
-    self.CurrentStartDate = nil;
-    self.Running = NO;
+    self.currentStartDate = nil;
+    self.running = NO;
     
 }
 
 -(void)resetTimer
 {
     [self stopTimer];
-    self.Interval = 0;
+    self.interval = 0;
 }
 
 @end

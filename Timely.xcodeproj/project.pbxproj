@@ -22,7 +22,8 @@
 		C96F90E715B2A5DE00AC2847 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C96F90E515B2A5DE00AC2847 /* InfoPlist.strings */; };
 		C96F90EA15B2A5DE00AC2847 /* TimelyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90E915B2A5DE00AC2847 /* TimelyTests.m */; };
 		C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FC15B592EA00AC2847 /* TMYTimer.m */; };
-		C96F910015B5D66A00AC2847 /* TMYTimerMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FF15B5D66A00AC2847 /* TMYTimerMutableArray.m */; };
+		C96F910015B5D66A00AC2847 /* TMYTimers.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FF15B5D66A00AC2847 /* TMYTimers.m */; };
+		C96F910315B5E89900AC2847 /* TMYTimerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F910215B5E89900AC2847 /* TMYTimerTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,10 @@
 		C96F90E915B2A5DE00AC2847 /* TimelyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelyTests.m; sourceTree = "<group>"; };
 		C96F90FB15B592EA00AC2847 /* TMYTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimer.h; sourceTree = "<group>"; };
 		C96F90FC15B592EA00AC2847 /* TMYTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimer.m; sourceTree = "<group>"; };
-		C96F90FE15B5D66A00AC2847 /* TMYTimerMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimerMutableArray.h; sourceTree = "<group>"; };
-		C96F90FF15B5D66A00AC2847 /* TMYTimerMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimerMutableArray.m; sourceTree = "<group>"; };
+		C96F90FE15B5D66A00AC2847 /* TMYTimers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimers.h; sourceTree = "<group>"; };
+		C96F90FF15B5D66A00AC2847 /* TMYTimers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimers.m; sourceTree = "<group>"; };
+		C96F910115B5E89800AC2847 /* TMYTimerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimerTableViewController.h; sourceTree = "<group>"; };
+		C96F910215B5E89900AC2847 /* TMYTimerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimerTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				C96F90D015B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard */,
 				C96F90D315B2A5DD00AC2847 /* TMYTimerViewController.h */,
 				C96F90D415B2A5DD00AC2847 /* TMYTimerViewController.m */,
+				C96F910115B5E89800AC2847 /* TMYTimerTableViewController.h */,
+				C96F910215B5E89900AC2847 /* TMYTimerTableViewController.m */,
 				C96F90C215B2A5DD00AC2847 /* Supporting Files */,
 			);
 			path = Timely;
@@ -166,8 +171,8 @@
 			children = (
 				C96F90FB15B592EA00AC2847 /* TMYTimer.h */,
 				C96F90FC15B592EA00AC2847 /* TMYTimer.m */,
-				C96F90FE15B5D66A00AC2847 /* TMYTimerMutableArray.h */,
-				C96F90FF15B5D66A00AC2847 /* TMYTimerMutableArray.m */,
+				C96F90FE15B5D66A00AC2847 /* TMYTimers.h */,
+				C96F90FF15B5D66A00AC2847 /* TMYTimers.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -285,7 +290,8 @@
 				C96F90CC15B2A5DD00AC2847 /* TMYAppDelegate.m in Sources */,
 				C96F90D515B2A5DD00AC2847 /* TMYTimerViewController.m in Sources */,
 				C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */,
-				C96F910015B5D66A00AC2847 /* TMYTimerMutableArray.m in Sources */,
+				C96F910015B5D66A00AC2847 /* TMYTimers.m in Sources */,
+				C96F910315B5E89900AC2847 /* TMYTimerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +475,7 @@
 				C96F90EF15B2A5DE00AC2847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C96F90F015B2A5DE00AC2847 /* Build configuration list for PBXNativeTarget "TimelyTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +484,7 @@
 				C96F90F215B2A5DE00AC2847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

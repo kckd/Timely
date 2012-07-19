@@ -7,7 +7,7 @@
 //
 
 #import "TMYTimerViewController.h"
-#import "TMYTimerMutableArray.h"
+#import "TMYTimers.h"
 
 @interface TMYTimerViewController ()
 
@@ -29,21 +29,28 @@ NSTimer *uiUpdateTimer;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([[TMYTimerMutableArray timers] count] > 0)
+    if (!timer)
     {
-        timer = [[TMYTimerMutableArray timers] objectAtIndex:0];
-        if (timer.Running)
+        if ([[TMYTimers timers] count] > 0)
         {
-            [self startTimer];
+            timer = [[TMYTimers timers] objectAtIndex:0];
         } else
         {
-            [self updateTimer];
+            timer = [[TMYTimer alloc] init];
+            [[TMYTimers timers] addObject:timer];
         }
+    }
+    
+    if (timer.running)
+    {
+        [self startTimer];
     } else
     {
-        timer = [[TMYTimer alloc] init];
-        [[TMYTimerMutableArray timers] addObject:timer];
+        [self updateTimer];
     }
+
+    //TODO: Temporary naming
+    timer.name = @"A Timer";
 }
 
 - (void)viewDidUnload
@@ -68,8 +75,8 @@ NSTimer *uiUpdateTimer;
 
 -(void)updateTimer
 {
-    int minutes = timer.Interval/60;
-    int seconds = timer.Interval-minutes;
+    int minutes = timer.interval/60;
+    int seconds = timer.interval-minutes;
     
     self.TenMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes/10];
     self.OneMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes%10];
@@ -101,12 +108,12 @@ NSTimer *uiUpdateTimer;
 
 - (IBAction)onStartStopButtonTouched:(id)sender
 {
-    if (!timer.Running) {
+    if (!timer.running) {
         [self startTimer];
     } else {
         [self stopTimer];
     }
-    [TMYTimerMutableArray saveTimers];
+    [TMYTimers saveTimers];
     
     
 }
@@ -114,7 +121,7 @@ NSTimer *uiUpdateTimer;
 - (IBAction)onResetButtonTouched:(id)sender {
     [self stopTimer];
     [timer resetTimer];
-    [TMYTimerMutableArray saveTimers];
+    [TMYTimers saveTimers];
     self.TenMinuteLabel.text = 
     self.OneMinuteLabel.text = 
     self.TenSecondLabel.text = 

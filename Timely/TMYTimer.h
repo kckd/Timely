@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface TMYTimer : NSObject
-@property (retain) NSString *Name;
-@property (retain) NSDate *CurrentStartDate;
-@property (nonatomic) NSTimeInterval Interval;
-@property BOOL Running;
+@property (retain) NSString *name;
+@property (retain) NSDate *currentStartDate;
+@property (nonatomic) NSTimeInterval interval;
+@property BOOL running;
 
 -(void)startTimer;
 -(void)stopTimer;
