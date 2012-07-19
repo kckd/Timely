@@ -19,6 +19,7 @@
 @synthesize TenSecondLabel;
 @synthesize OneSecondLabel;
 @synthesize StartStopButton;
+@synthesize NameTextField;
 @synthesize timer;
 
 #define UPDATE_INTERVAL 1.0/10 // 10ms
@@ -49,8 +50,13 @@ NSTimer *uiUpdateTimer;
         [self updateTimer];
     }
 
-    //TODO: Temporary naming
-    timer.name = @"A Timer";
+    NameTextField.text = timer.name;
+    
+    if (![timer.name length])
+    {
+        [NameTextField becomeFirstResponder]; // Puts the cursor in the name field and shows the keyboard if there is no name set.
+
+    }
 }
 
 - (void)viewDidUnload
@@ -60,6 +66,7 @@ NSTimer *uiUpdateTimer;
     [self setTenSecondLabel:nil];
     [self setOneSecondLabel:nil];
     [self setStartStopButton:nil];
+    [self setNameTextField:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -127,4 +134,27 @@ NSTimer *uiUpdateTimer;
     self.TenSecondLabel.text = 
     self.OneSecondLabel.text = @"0";
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (textField.text.length) {
+        [textField resignFirstResponder]; //to hide keyboard
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField.text.length) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    timer.name = textField.text;
+    
+}
+
 @end
