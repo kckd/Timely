@@ -155,6 +155,8 @@ NSTimer *uiUpdateTimer;
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     timer.name = textField.text;
     
+    [TMYTimers saveTimers];
+    
 }
 
 @end

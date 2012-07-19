@@ -51,6 +51,13 @@ NSMutableArray *timers = nil;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -131,6 +138,11 @@ NSMutableArray *timers = nil;
         NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
         TMYTimerViewController *timerViewController = [segue destinationViewController];
         timerViewController.timer = [timers objectAtIndex:selectedRowIndex.row];
+    } else if ([[segue identifier] isEqualToString:@"ShowNewTimer"]) {
+        TMYTimerViewController *timerViewController = [segue destinationViewController];
+        TMYTimer *newTimer = [[TMYTimer alloc] init];
+        timerViewController.timer = newTimer;
+        [timers addObject:newTimer];
     }
 }
 
