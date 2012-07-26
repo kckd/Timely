@@ -12,15 +12,16 @@
 #import "TMYTimer.h"
 
 @interface TMYTimerTableViewController ()
+@property (nonatomic,retain) NSTimer *uiUpdateTimer;
 -(void)updateTimer;
 @end
 
 @implementation TMYTimerTableViewController
+@synthesize uiUpdateTimer;
 
 #define UPDATE_INTERVAL 1.0/10 // 10ms
 
 NSMutableArray *timers = nil;
-NSTimer *uiUpdateTimer;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -60,7 +61,7 @@ NSTimer *uiUpdateTimer;
     
     [self.tableView reloadData];
     
-    uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
+    self.uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
                                                      target:self
                                                    selector:@selector(updateTimer)
                                                    userInfo:nil
@@ -71,7 +72,7 @@ NSTimer *uiUpdateTimer;
 {
     [super viewWillAppear:animated];
     
-    [uiUpdateTimer invalidate];
+    [self.uiUpdateTimer invalidate];
 }
 
 #pragma mark - Table view data source
@@ -164,6 +165,9 @@ NSTimer *uiUpdateTimer;
 
 -(void)updateTimer
 {
+    if (self.tableView.dragging) { // Trying to update the timers while scrolling would cause performance issues.
+        return;
+    }
     for (UITableViewCell *cell in self.tableView.visibleCells) {
         TMYTimer *timer = [timers objectAtIndex:[[self.tableView indexPathForCell:cell] row]];
         [cell.detailTextLabel setText:timer.intervalString];

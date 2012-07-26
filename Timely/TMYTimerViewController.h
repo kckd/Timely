@@ -22,6 +22,7 @@
 @property (nonatomic, retain) TMYTimer *timer;
 
 
+
 - (IBAction)onStartStopButtonTouched:(id)sender;
 - (IBAction)onResetButtonTouched:(id)sender;
 

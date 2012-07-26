@@ -11,6 +11,8 @@
 
 @interface TMYTimerViewController ()
 
+@property (nonatomic,retain) NSTimer *uiUpdateTimer;
+
 @end
 
 @implementation TMYTimerViewController
@@ -21,10 +23,10 @@
 @synthesize StartStopButton;
 @synthesize NameTextField;
 @synthesize timer;
+@synthesize uiUpdateTimer;
 
 #define UPDATE_INTERVAL 1.0/10 // 10ms
 
-NSTimer *uiUpdateTimer;
 
 
 - (void)viewDidLoad
@@ -83,7 +85,8 @@ NSTimer *uiUpdateTimer;
 -(void)updateTimer
 {
     int minutes = timer.interval/60;
-    int seconds = timer.interval-minutes;
+    int seconds = (int)timer.interval%60;
+
     
     self.TenMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes/10];
     self.OneMinuteLabel.text = [NSString stringWithFormat:@"%d",minutes%10];
@@ -97,7 +100,7 @@ NSTimer *uiUpdateTimer;
     
     [timer startTimer];
     
-    uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
+    self.uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
                                              target:self
                                            selector:@selector(updateTimer)
                                            userInfo:nil
@@ -108,8 +111,8 @@ NSTimer *uiUpdateTimer;
 {
     [self.StartStopButton setTitle:@"Start" forState:UIControlStateNormal];
 
-    [uiUpdateTimer invalidate];
-    uiUpdateTimer = nil;
+    [self.uiUpdateTimer invalidate];
+    self.uiUpdateTimer = nil;
     [timer stopTimer];
 }
 
