@@ -11,6 +11,7 @@
 @interface TMYTimer : NSObject
 @property (retain) NSString *name;
 @property (retain) NSDate *currentStartDate;
+@property (readonly) NSString *intervalString;
 @property (nonatomic) NSTimeInterval interval;
 @property BOOL running;
 

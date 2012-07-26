@@ -80,7 +80,7 @@ NSMutableArray *timers = nil;
     TMYTimer *timer = [timers objectAtIndex:[indexPath row]];
     
     [[cell textLabel] setText:timer.name];
-    [[cell detailTextLabel] setText:[NSString stringWithFormat:@"%f",timer.interval]];
+    [[cell detailTextLabel] setText:timer.intervalString];
     
     return cell;
 }

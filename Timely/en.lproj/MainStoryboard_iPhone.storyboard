@@ -112,7 +112,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="784" y="0.0"/>
+            <point key="canvasLocation" x="681" y="12"/>
         </scene>
         <!--Timer Table View Controller - Timely Timers-->
         <scene sceneID="rin-5K-7x3">
@@ -163,7 +163,7 @@
                     </navigationItem>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="337" y="55"/>
+            <point key="canvasLocation" x="253" y="12"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WKZ-81-CEg">
@@ -178,9 +178,27 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-86" y="55"/>
+            <point key="canvasLocation" x="-211" y="12"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="TMYTimerTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TMYTimerTableViewController.h"/>
+        </class>
+        <class className="TMYTimerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TMYTimerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onResetButtonTouched:"/>
+                <relationship kind="action" name="onStartStopButtonTouched:"/>
+                <relationship kind="outlet" name="NameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="OneMinuteLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="OneSecondLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="StartStopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="TenMinuteLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="TenSecondLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

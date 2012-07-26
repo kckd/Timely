@@ -68,6 +68,14 @@
         return interval;
 }
 
+-(NSString*)intervalString
+{
+    int minutes = self.interval/60;
+    int seconds = self.interval-minutes;
+    
+    return [NSString stringWithFormat:@"%d:%d",minutes, seconds];
+}
+
 -(void)startTimer
 {
     if (!self.running)
