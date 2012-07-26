@@ -12,12 +12,15 @@
 #import "TMYTimer.h"
 
 @interface TMYTimerTableViewController ()
-
+-(void)updateTimer;
 @end
 
 @implementation TMYTimerTableViewController
 
+#define UPDATE_INTERVAL 1.0/10 // 10ms
+
 NSMutableArray *timers = nil;
+NSTimer *uiUpdateTimer;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -56,6 +59,19 @@ NSMutableArray *timers = nil;
     [super viewWillAppear:animated];
     
     [self.tableView reloadData];
+    
+    uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL
+                                                     target:self
+                                                   selector:@selector(updateTimer)
+                                                   userInfo:nil
+                                                    repeats:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [uiUpdateTimer invalidate];
 }
 
 #pragma mark - Table view data source
@@ -144,6 +160,14 @@ NSMutableArray *timers = nil;
         timerViewController.timer = newTimer;
         [timers addObject:newTimer];
     }
+}
+
+-(void)updateTimer
+{
+    for (UITableViewCell *cell in self.tableView.visibleCells) {
+        TMYTimer *timer = [timers objectAtIndex:[[self.tableView indexPathForCell:cell] row]];
+        [cell.detailTextLabel setText:timer.intervalString];
+    }; 
 }
 
 @end
