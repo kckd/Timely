@@ -55,12 +55,6 @@
     {
         self.running = YES;
         self.endDate = [NSDate dateWithTimeInterval:self.endInterval sinceDate:[NSDate date]];
-        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        localNotification.fireDate = [NSDate dateWithTimeInterval:self.endInterval sinceDate:[NSDate date]];
-        localNotification.alertBody = [NSString stringWithFormat:@"Timer %@ has ended.",self.name];
-        NSDictionary *infoDict = [NSDictionary dictionaryWithObject:self.name forKey:@"TimerName"];
-        localNotification.userInfo = infoDict;
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
     
 }
@@ -70,12 +64,6 @@
     self.running = NO;
     self.endInterval = [self.endDate timeIntervalSinceDate:[NSDate date]];
     self.endDate = nil;
-    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
-    for (UILocalNotification *localNotification in notifications) {
-        if ([[localNotification.userInfo objectForKey:@"TimerName"] isEqualToString:self.name]) {
-            [[UIApplication sharedApplication] cancelLocalNotification:localNotification];
-        }
-    }
     
 }
 

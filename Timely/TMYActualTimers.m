@@ -22,7 +22,7 @@ static NSMutableArray* sharedActualTimers = nil;
         NSString *adocumentsDirectory = [apaths objectAtIndex:0];
         
         //make a file name to write the data to using the documents directory:
-        NSString *afileName = [NSString stringWithFormat:@"%@/ActuaTimers.plist",
+        NSString *afileName = [NSString stringWithFormat:@"%@/ActualTimers.plist",
                               adocumentsDirectory];
         if ([[NSFileManager defaultManager] fileExistsAtPath:afileName])
         {
