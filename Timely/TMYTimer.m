@@ -9,10 +9,13 @@
 #import "TMYTimer.h"
 
 @implementation TMYTimer
+
 @synthesize name;
 @synthesize interval;
 @synthesize currentStartDate;
 @synthesize running;
+
+
 
 -(TMYTimer*)init
 {

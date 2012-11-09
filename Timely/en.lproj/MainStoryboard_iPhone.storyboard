@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="ADJ-rV-J5i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qPk-rE-slK">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Timer View Controller-->
+        <!--Timer View Controller - Stopwatch-->
         <scene sceneID="5">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
                 <viewController id="2" customClass="TMYTimerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="6hC-TN-lKX" userLabel="TimerView">
+                            <view opaque="NO" contentMode="scaleToFill" id="6hC-TN-lKX" userLabel="TimerView">
                                 <rect key="frame" x="7" y="61" width="307" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -57,6 +55,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0MT-Qa-9wE">
                                 <rect key="frame" x="84" y="205" width="72" height="37"/>
@@ -98,10 +97,17 @@
                                     <outlet property="delegate" destination="2" id="hk7-67-cOI"/>
                                 </connections>
                             </textField>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="testLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7nK-cN-V2w" userLabel="testLabel">
+                                <rect key="frame" x="71" y="287" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CUy-eN-y2n"/>
+                    <navigationItem key="navigationItem" title="Stopwatch" id="CUy-eN-y2n"/>
                     <connections>
                         <outlet property="NameTextField" destination="ZcB-TQ-jbi" id="g9B-kr-6o0"/>
                         <outlet property="OneMinuteLabel" destination="T2A-TO-lth" id="JCG-bi-jQa"/>
@@ -109,26 +115,28 @@
                         <outlet property="StartStopButton" destination="0MT-Qa-9wE" id="68e-kg-Xcs"/>
                         <outlet property="TenMinuteLabel" destination="5dr-6G-Jln" id="iSc-li-QU5"/>
                         <outlet property="TenSecondLabel" destination="FmH-oA-qEq" id="PXr-Cj-g6r"/>
+                        <outlet property="colon" destination="vRs-ph-cCf" id="hLM-ay-dfp"/>
+                        <outlet property="testLabel" destination="7nK-cN-V2w" id="pVA-0N-9pF"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="12"/>
+            <point key="canvasLocation" x="897" y="20"/>
         </scene>
-        <!--Timer Table View Controller - Timely Timers-->
+        <!--Timer Table View Controller - Stopwatches-->
         <scene sceneID="rin-5K-7x3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FYs-H9-m5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="fSe-cC-qtu" customClass="TMYTimerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Gi6-CR-Dvx">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimerCell" textLabel="taO-pd-R8a" detailTextLabel="gbn-JL-13S" style="IBUITableViewCellStyleSubtitle" id="JWg-2f-mCY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TimerCell" textLabel="taO-pd-R8a" detailTextLabel="gbn-JL-13S" style="IBUITableViewCellStyleSubtitle" id="JWg-2f-mCY">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="taO-pd-R8a">
@@ -154,7 +162,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Timely Timers" id="WqW-iY-gtY">
+                    <navigationItem key="navigationItem" title="Stopwatches" id="WqW-iY-gtY">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="pgl-bZ-UEo">
                             <connections>
                                 <segue destination="2" kind="push" identifier="ShowNewTimer" id="neA-h2-dYO"/>
@@ -162,14 +170,266 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYs-H9-m5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="253" y="12"/>
+            <point key="canvasLocation" x="325" y="12"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Actual Timer Table View Controller - Timers-->
+        <scene sceneID="sDY-Aj-ABD">
+            <objects>
+                <tableViewController restorationIdentifier="" storyboardIdentifier="" id="69D-j3-6gw" customClass="TMYActualTimerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="gGU-TJ-6cv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="ActualTimerCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ATimerCell" textLabel="O64-1Q-33I" style="IBUITableViewCellStyleDefault" id="WVV-XZ-Jh0" userLabel="ATimerCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O64-1Q-33I">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="1Sk-Oc-fwA" kind="push" identifier="SelectedATimerCell" id="zCq-fK-jvZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Timers" id="JLR-5q-TTh">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="TdF-33-W1C" userLabel="Bar Button Item - Add">
+                            <connections>
+                                <segue destination="1Sk-Oc-fwA" kind="push" identifier="AddNewTimer" id="TCa-ul-hjg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TOY-kE-rrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="267" y="796"/>
+        </scene>
+        <!--Actual Timer View-->
+        <scene sceneID="Vkp-Im-fbr">
+            <objects>
+                <viewController storyboardIdentifier="ActualTimerView" title="Actual Timer View" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Sk-Oc-fwA" userLabel="Actual Timer View" customClass="TMYActualTimerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P7j-33-0e4">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" id="JbX-7J-idB" userLabel="ActualTimerView">
+                                <rect key="frame" x="0.0" y="108" width="320" height="133"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Afz-gO-X20">
+                                        <rect key="frame" x="217" y="49" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="MinutesLabel" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t9u-XY-dlo" userLabel="MinutesLabel">
+                                        <rect key="frame" x="139" y="49" width="42" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="MinutesLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="SecondsLabel" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9mx-ho-ZO5" userLabel="SecondsLabel">
+                                        <rect key="frame" x="252" y="52" width="42" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="SecondsLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="03z-eT-PrT">
+                                        <rect key="frame" x="100" y="49" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="HoursLabel" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ahM-Jm-uM4" userLabel="HoursLabel">
+                                        <rect key="frame" x="20" y="49" width="42" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="HoursLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="MinutesTagLabel" text="Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yhv-dI-9pd" userLabel="MinutesTagLabel">
+                                        <rect key="frame" x="129" y="12" width="69" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="MinutesTagLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="HoursTagLabel" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xci-fG-136" userLabel="HoursTagLabel">
+                                        <rect key="frame" x="20" y="12" width="59" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="HoursTagLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HoursStepper" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="60" id="vbf-yI-9xM" userLabel="HoursStepper">
+                                        <rect key="frame" x="0.0" y="91" width="94" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <action selector="onHoursStepperTouched:" destination="1Sk-Oc-fwA" eventType="valueChanged" id="WO8-sA-8Pm"/>
+                                        </connections>
+                                    </stepper>
+                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="60" id="YIy-3L-NQS">
+                                        <rect key="frame" x="113" y="91" width="94" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <action selector="onMinutesStepperTouched:" destination="1Sk-Oc-fwA" eventType="valueChanged" id="fps-nr-fLa"/>
+                                        </connections>
+                                    </stepper>
+                                    <stepper opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="60" id="3Hg-fM-J3P">
+                                        <rect key="frame" x="226" y="91" width="94" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <connections>
+                                            <action selector="onSecondsStepperTouched:" destination="1Sk-Oc-fwA" eventType="valueChanged" id="NLO-pz-9id"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="SecondsTagLabel" text="Seconds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x7D-Fe-pl4" userLabel="SecondsTagLabel">
+                                        <rect key="frame" x="233" y="12" width="67" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" label="SecondsTagLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ResetButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="V3o-yv-zca" userLabel="ResetButton">
+                                <rect key="frame" x="204" y="260" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="RestButton"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onResetButtonTouched:" destination="1Sk-Oc-fwA" eventType="touchUpInside" id="tyj-6k-S7w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="StartStopButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="u9S-0z-cdl" userLabel="StartStopButton">
+                                <rect key="frame" x="41" y="260" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="StartStopButton"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStartStopButtonTouched:" destination="1Sk-Oc-fwA" eventType="touchUpInside" id="LaQ-iy-1Lt"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" id="Fx9-5U-L3i">
+                                <rect key="frame" x="98" y="20" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1Sk-Oc-fwA" id="Vv0-oj-C7a"/>
+                                </connections>
+                            </textField>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" restorationIdentifier="testLabel" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iqf-ca-4K2" userLabel="testLabel">
+                                <rect key="frame" x="184" y="333" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Timer" id="Xte-vZ-3z1"/>
+                    <connections>
+                        <outlet property="HoursLabel" destination="ahM-Jm-uM4" id="uJ3-Ve-jr7"/>
+                        <outlet property="HoursStepper" destination="vbf-yI-9xM" id="r4C-nB-IgL"/>
+                        <outlet property="MinutesLabel" destination="t9u-XY-dlo" id="49c-3o-fFk"/>
+                        <outlet property="MinutesStepper" destination="YIy-3L-NQS" id="QGv-jA-FA9"/>
+                        <outlet property="NameTextField" destination="Fx9-5U-L3i" id="0Sn-Xy-OM6"/>
+                        <outlet property="ResetButton" destination="V3o-yv-zca" id="IQp-tn-UOl"/>
+                        <outlet property="SecondsLabel" destination="9mx-ho-ZO5" id="1dM-O4-KcJ"/>
+                        <outlet property="SecondsStepper" destination="3Hg-fM-J3P" id="KYM-Pt-0vg"/>
+                        <outlet property="StartStopButton" destination="u9S-0z-cdl" id="ejj-Fm-6xI"/>
+                        <outlet property="colonOne" destination="Afz-gO-X20" id="I2F-lg-KkF"/>
+                        <outlet property="colonTwo" destination="03z-eT-PrT" id="ZQN-fu-Qms"/>
+                        <outlet property="hoursTitle" destination="xci-fG-136" id="N2V-dq-Dg4"/>
+                        <outlet property="minutesTitle" destination="yhv-dI-9pd" id="FwO-UG-CRn"/>
+                        <outlet property="secondsTitle" destination="x7D-Fe-pl4" id="5JK-CQ-qjW"/>
+                        <outlet property="testLabel" destination="iqf-ca-4K2" id="lDc-aw-8kt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hL-hJ-7xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="795" y="840"/>
+        </scene>
+        <!--Navigation Controller - Timer-->
+        <scene sceneID="vtB-uz-43a">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="3cR-ni-nqo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Timer" image="TimerTabBarIcon.png" id="BrP-6I-j3J"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0RP-ev-H8n">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="69D-j3-6gw" kind="relationship" relationship="rootViewController" id="ZIq-IB-Wie"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7X-pG-s1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-253" y="788"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pOQ-x3-kZQ">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="qPk-rE-slK" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="JEY-ql-QJu">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ADJ-rV-J5i" kind="relationship" relationship="viewControllers" id="GtK-E6-BTE"/>
+                        <segue destination="3cR-ni-nqo" kind="relationship" relationship="viewControllers" id="YpF-1T-fTr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmp-DT-Jc2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-964" y="397"/>
+        </scene>
+        <!--Navigation Controller - Stopwatch-->
         <scene sceneID="WKZ-81-CEg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HS6-jh-fVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="ADJ-rV-J5i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="StopwatchTabBarIcon.png" id="8uz-9A-tEF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZPl-jD-j5s">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -177,11 +437,45 @@
                         <segue destination="fSe-cC-qtu" kind="relationship" relationship="rootViewController" id="6EI-Jd-VjT"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HS6-jh-fVg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-211" y="12"/>
+            <point key="canvasLocation" x="-223" y="20"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="StopwatchTabBarIcon.png" width="27" height="29"/>
+        <image name="TimerTabBarIcon.png" width="29" height="30"/>
+    </resources>
     <classes>
+        <class className="TMYActualTimerTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TMYActualTimerTableViewController.h"/>
+        </class>
+        <class className="TMYActualTimerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TMYActualTimerViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="onHoursStepperTouched:"/>
+                <relationship kind="action" name="onMinutesStepperTouched:"/>
+                <relationship kind="action" name="onResetButtonTouched:"/>
+                <relationship kind="action" name="onSecondsStepperTouched:"/>
+                <relationship kind="action" name="onStartStopButtonTouched:"/>
+                <relationship kind="outlet" name="HoursLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="HoursStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="MinutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="MinutesStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="NameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="ResetButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="SecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="SecondsStepper" candidateClass="UIStepper"/>
+                <relationship kind="outlet" name="StartStopButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="colonOne" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="colonTwo" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="hoursTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minutesTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondsPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="secondsTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="testLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="TMYTimerTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TMYTimerTableViewController.h"/>
         </class>
@@ -190,12 +484,15 @@
             <relationships>
                 <relationship kind="action" name="onResetButtonTouched:"/>
                 <relationship kind="action" name="onStartStopButtonTouched:"/>
+                <relationship kind="outlet" name="HoursStepper" candidateClass="UIStepper"/>
                 <relationship kind="outlet" name="NameTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="OneMinuteLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="OneSecondLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="StartStopButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="TenMinuteLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="TenSecondLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="colon" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="testLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
@@ -205,6 +502,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="zCq-fK-jvZ"/>
         <segue reference="neA-h2-dYO"/>
     </inferredMetricsTieBreakers>
 </document>

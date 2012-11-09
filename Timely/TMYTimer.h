@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TMYTimer : NSObject
+
 @property (retain) NSString *name;
 @property (retain) NSDate *currentStartDate;
 @property (readonly) NSString *intervalString;

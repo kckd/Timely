@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TMYAppDelegate : UIResponder <UIApplicationDelegate>
+@interface TMYAppDelegate : UIResponder <UIApplicationDelegate>{
+    NSMutableString *data;
+    
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) NSMutableString *data;
+@property (strong, nonatomic) NSMutableString *data2;
+
+@property (strong, nonatomic) NSMutableString *timerData;
+
+@property (strong, nonatomic) NSMutableString *timerData2;
+
 
 @end

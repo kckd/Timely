@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C356F731617A05D00DCE162 /* TimelyTimer57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C356F721617A05D00DCE162 /* TimelyTimer57x57.png */; };
+		6C356F811617DE4E00DCE162 /* TMYActualTimerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C356F801617DE4E00DCE162 /* TMYActualTimerTableViewController.m */; };
+		6C356F881617E2FC00DCE162 /* TMYActualTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C356F871617E2FC00DCE162 /* TMYActualTimerViewController.m */; };
+		6C356F941637D94C00DCE162 /* TMYActualTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C356F931637D94C00DCE162 /* TMYActualTimer.m */; };
+		6C356F981637DA5B00DCE162 /* TMYActualTimers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C356F971637DA5B00DCE162 /* TMYActualTimers.m */; };
+		6C356FB8163A759000DCE162 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C356FB7163A758F00DCE162 /* Default.png */; };
+		6C356FC3163A8A6000DCE162 /* TMYTimerSettingsRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C356FC2163A8A5F00DCE162 /* TMYTimerSettingsRootTableViewController.m */; };
+		6C356FD2163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C356FD1163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.m */; };
 		C96F90BC15B2A5DD00AC2847 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BB15B2A5DD00AC2847 /* UIKit.framework */; };
 		C96F90BE15B2A5DD00AC2847 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BD15B2A5DD00AC2847 /* Foundation.framework */; };
 		C96F90C015B2A5DD00AC2847 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F90BF15B2A5DD00AC2847 /* CoreGraphics.framework */; };
@@ -24,6 +32,8 @@
 		C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FC15B592EA00AC2847 /* TMYTimer.m */; };
 		C96F910015B5D66A00AC2847 /* TMYTimers.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F90FF15B5D66A00AC2847 /* TMYTimers.m */; };
 		C96F910315B5E89900AC2847 /* TMYTimerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96F910215B5E89900AC2847 /* TMYTimerTableViewController.m */; };
+		C9973E51164C2BA40086BED1 /* TimerTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9973E50164C2BA40086BED1 /* TimerTabBarIcon.png */; };
+		C9973E53164C31700086BED1 /* StopwatchTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9973E52164C31700086BED1 /* StopwatchTabBarIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C356F721617A05D00DCE162 /* TimelyTimer57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimelyTimer57x57.png; sourceTree = "<group>"; };
+		6C356F7F1617DE4E00DCE162 /* TMYActualTimerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYActualTimerTableViewController.h; sourceTree = "<group>"; };
+		6C356F801617DE4E00DCE162 /* TMYActualTimerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYActualTimerTableViewController.m; sourceTree = "<group>"; };
+		6C356F861617E2FC00DCE162 /* TMYActualTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYActualTimerViewController.h; sourceTree = "<group>"; };
+		6C356F871617E2FC00DCE162 /* TMYActualTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYActualTimerViewController.m; sourceTree = "<group>"; };
+		6C356F921637D94C00DCE162 /* TMYActualTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYActualTimer.h; sourceTree = "<group>"; };
+		6C356F931637D94C00DCE162 /* TMYActualTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYActualTimer.m; sourceTree = "<group>"; };
+		6C356F961637DA5B00DCE162 /* TMYActualTimers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYActualTimers.h; sourceTree = "<group>"; };
+		6C356F971637DA5B00DCE162 /* TMYActualTimers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYActualTimers.m; sourceTree = "<group>"; };
+		6C356FB7163A758F00DCE162 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6C356FC1163A8A5D00DCE162 /* TMYTimerSettingsRootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimerSettingsRootTableViewController.h; sourceTree = "<group>"; };
+		6C356FC2163A8A5F00DCE162 /* TMYTimerSettingsRootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimerSettingsRootTableViewController.m; sourceTree = "<group>"; };
+		6C356FD0163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimerSelectedOptionTableViewController.h; sourceTree = "<group>"; };
+		6C356FD1163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimerSelectedOptionTableViewController.m; sourceTree = "<group>"; };
 		C96F90B715B2A5DD00AC2847 /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96F90BB15B2A5DD00AC2847 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C96F90BD15B2A5DD00AC2847 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +87,8 @@
 		C96F90FF15B5D66A00AC2847 /* TMYTimers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimers.m; sourceTree = "<group>"; };
 		C96F910115B5E89800AC2847 /* TMYTimerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMYTimerTableViewController.h; sourceTree = "<group>"; };
 		C96F910215B5E89900AC2847 /* TMYTimerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMYTimerTableViewController.m; sourceTree = "<group>"; };
+		C9973E50164C2BA40086BED1 /* TimerTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimerTabBarIcon.png; sourceTree = "<group>"; };
+		C9973E52164C31700086BED1 /* StopwatchTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StopwatchTabBarIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +118,7 @@
 		C96F90AC15B2A5DD00AC2847 = {
 			isa = PBXGroup;
 			children = (
+				C9973E4F164C2B8A0086BED1 /* Resources */,
 				C96F90C115B2A5DD00AC2847 /* Timely */,
 				C96F90E215B2A5DE00AC2847 /* TimelyTests */,
 				C96F90BA15B2A5DD00AC2847 /* Frameworks */,
@@ -122,13 +149,21 @@
 		C96F90C115B2A5DD00AC2847 /* Timely */ = {
 			isa = PBXGroup;
 			children = (
+				6C356F7F1617DE4E00DCE162 /* TMYActualTimerTableViewController.h */,
+				6C356F801617DE4E00DCE162 /* TMYActualTimerTableViewController.m */,
 				C96F90F715B58ED400AC2847 /* Model */,
 				C96F90CA15B2A5DD00AC2847 /* TMYAppDelegate.h */,
 				C96F90CB15B2A5DD00AC2847 /* TMYAppDelegate.m */,
+				6C356F861617E2FC00DCE162 /* TMYActualTimerViewController.h */,
+				6C356F871617E2FC00DCE162 /* TMYActualTimerViewController.m */,
 				C96F90CD15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard */,
 				C96F90D015B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard */,
 				C96F90D315B2A5DD00AC2847 /* TMYTimerViewController.h */,
 				C96F90D415B2A5DD00AC2847 /* TMYTimerViewController.m */,
+				6C356FD0163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.h */,
+				6C356FD1163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.m */,
+				6C356FC1163A8A5D00DCE162 /* TMYTimerSettingsRootTableViewController.h */,
+				6C356FC2163A8A5F00DCE162 /* TMYTimerSettingsRootTableViewController.m */,
 				C96F910115B5E89800AC2847 /* TMYTimerTableViewController.h */,
 				C96F910215B5E89900AC2847 /* TMYTimerTableViewController.m */,
 				C96F90C215B2A5DD00AC2847 /* Supporting Files */,
@@ -169,12 +204,27 @@
 		C96F90F715B58ED400AC2847 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C356F921637D94C00DCE162 /* TMYActualTimer.h */,
+				6C356F931637D94C00DCE162 /* TMYActualTimer.m */,
+				6C356F961637DA5B00DCE162 /* TMYActualTimers.h */,
+				6C356F971637DA5B00DCE162 /* TMYActualTimers.m */,
 				C96F90FB15B592EA00AC2847 /* TMYTimer.h */,
 				C96F90FC15B592EA00AC2847 /* TMYTimer.m */,
 				C96F90FE15B5D66A00AC2847 /* TMYTimers.h */,
 				C96F90FF15B5D66A00AC2847 /* TMYTimers.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		C9973E4F164C2B8A0086BED1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9973E52164C31700086BED1 /* StopwatchTabBarIcon.png */,
+				C9973E50164C2BA40086BED1 /* TimerTabBarIcon.png */,
+				6C356FB7163A758F00DCE162 /* Default.png */,
+				6C356F721617A05D00DCE162 /* TimelyTimer57x57.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +302,10 @@
 				C96F90C615B2A5DD00AC2847 /* InfoPlist.strings in Resources */,
 				C96F90CF15B2A5DD00AC2847 /* MainStoryboard_iPhone.storyboard in Resources */,
 				C96F90D215B2A5DD00AC2847 /* MainStoryboard_iPad.storyboard in Resources */,
+				6C356F731617A05D00DCE162 /* TimelyTimer57x57.png in Resources */,
+				6C356FB8163A759000DCE162 /* Default.png in Resources */,
+				C9973E51164C2BA40086BED1 /* TimerTabBarIcon.png in Resources */,
+				C9973E53164C31700086BED1 /* StopwatchTabBarIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +346,12 @@
 				C96F90FD15B592EA00AC2847 /* TMYTimer.m in Sources */,
 				C96F910015B5D66A00AC2847 /* TMYTimers.m in Sources */,
 				C96F910315B5E89900AC2847 /* TMYTimerTableViewController.m in Sources */,
+				6C356F811617DE4E00DCE162 /* TMYActualTimerTableViewController.m in Sources */,
+				6C356F881617E2FC00DCE162 /* TMYActualTimerViewController.m in Sources */,
+				6C356F941637D94C00DCE162 /* TMYActualTimer.m in Sources */,
+				6C356F981637DA5B00DCE162 /* TMYActualTimers.m in Sources */,
+				6C356FC3163A8A6000DCE162 /* TMYTimerSettingsRootTableViewController.m in Sources */,
+				6C356FD2163A9F3C00DCE162 /* TMYTimerSelectedOptionTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -394,6 +455,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

@@ -1,27 +1,29 @@
 //
-//  TMYTimerTableViewController.m
+//  TMYActualTimerTableViewController.m
 //  Timely
 //
-//  Created by Casey Cady on 7/17/12.
+//  Created by Matthew Phillips on 9/29/12.
 //  Copyright (c) 2012 Deloitte Digital. All rights reserved.
 //
 
-#import "TMYTimerTableViewController.h"
-#import "TMYTimerViewController.h"
-#import "TMYTimers.h"
-#import "TMYTimer.h"
+#import "TMYActualTimerTableViewController.h"
+#import "TMYActualTimerViewController.h"
+#import "TMYActualTimer.h"
+#import "TMYActualTimers.h"
 
-@interface TMYTimerTableViewController ()
-@property (nonatomic,retain) NSTimer *uiUpdateTimer;
--(void)updateTimer;
+@interface TMYActualTimerTableViewController ()
+
 @end
 
-@implementation TMYTimerTableViewController
-@synthesize uiUpdateTimer;
+@implementation TMYActualTimerTableViewController
 
-#define UPDATE_INTERVAL 1.0/10 // 10ms
 
-NSMutableArray *timers = nil;
+@synthesize auiUpdateTimer;
+
+
+NSMutableArray *actualTimers = nil;
+
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,12 +39,7 @@ NSMutableArray *timers = nil;
     [super viewDidLoad];
    // self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"bgtest2.png"]];
     
-    timers = [TMYTimers timers];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    actualTimers = [TMYActualTimers actualTimers];
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
@@ -50,8 +47,7 @@ NSMutableArray *timers = nil;
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -64,31 +60,17 @@ NSMutableArray *timers = nil;
     [super viewWillAppear:animated];
     
     
-//    // Cleanup empty timers
-//    for (TMYTimer *timer in [NSArray arrayWithArray:timers])
-//    {
-//        if (timer.name.length == 0 && !timer.running) {
-//            [timers removeObject:timer];
-//        }
-//    }
-    
     [self.tableView reloadData];
     
-    self.uiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:UPDATE_INTERVAL target:self selector:@selector(updateTimer) userInfo:nil
-        repeats:YES];
     
-    if (timers.count > 0)
-        self.editButtonItem.enabled = YES;
-    else
-        self.editButtonItem.enabled = NO;
-        
+    self.auiUpdateTimer = [NSTimer scheduledTimerWithTimeInterval: 1.0f target:self selector:@selector(auiupdateTimer) userInfo:nil repeats:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.auiUpdateTimer invalidate];
     
-    [self.uiUpdateTimer invalidate];
 }
 
 #pragma mark - Table view data source
@@ -102,21 +84,25 @@ NSMutableArray *timers = nil;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [timers count];
+    return [actualTimers count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"TimerCell";
+    static NSString *CellIdentifier = @"ATimerCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    TMYTimer *timer = [timers objectAtIndex:[indexPath row]];
+    TMYActualTimer *actualTimer = [actualTimers objectAtIndex:[indexPath row]];
     
-    [[cell textLabel] setText:timer.name];
-    [[cell detailTextLabel] setText:timer.intervalString];
+    
+
+    [[cell textLabel] setText:actualTimer.name];
+    //[[cell detailTextLabel] setText:actualTimer.intervalString];
     
     return cell;
 }
+
+
 
 
 // Override to support editing the table view.
@@ -124,17 +110,13 @@ NSMutableArray *timers = nil;
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [timers removeObjectAtIndex:indexPath.row];
+        [actualTimers removeObjectAtIndex:indexPath.row];
         // delete the row from the table
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        if (timers.count == 0) {
-            [self setEditing:NO animated:YES];
-            self.editButtonItem.enabled = NO;
-        }
-    }   
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 
@@ -147,28 +129,24 @@ NSMutableArray *timers = nil;
      When a row is selected, the segue creates the detail view controller as the destination.
      Set the detail view controller's detail item to the item associated with the selected row.
      */
-    if ([[segue identifier] isEqualToString:@"ShowSelectedTimer"]) {
+   if ([[segue identifier] isEqualToString:@"SelectedATimerCell"]) {
         
         NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        TMYTimerViewController *timerViewController = [segue destinationViewController];
-        timerViewController.timer = [timers objectAtIndex:selectedRowIndex.row];
-    } else if ([[segue identifier] isEqualToString:@"ShowNewTimer"]) {
-        TMYTimerViewController *timerViewController = [segue destinationViewController];
-        TMYTimer *newTimer = [[TMYTimer alloc] init];
-        timerViewController.timer = newTimer;
-        [timers addObject:newTimer];
+        TMYActualTimerViewController *timerViewController = [segue destinationViewController];
+        timerViewController.actualTimer = [actualTimers objectAtIndex:selectedRowIndex.row];
+    } else if ([[segue identifier] isEqualToString:@"AddNewTimer"]) {
+        TMYActualTimerViewController *timerViewController = [segue destinationViewController];
+        TMYActualTimer *newTimer = [[TMYActualTimer alloc] init];
+        timerViewController.actualTimer = newTimer;
+        [actualTimers addObject:newTimer];
     }
 }
 
--(void)updateTimer
+-(void)auiupdateTimer
 {
     if (self.tableView.dragging) { // Trying to update the timers while scrolling would cause performance issues.
         return;
     }
-    for (UITableViewCell *cell in self.tableView.visibleCells) {
-        TMYTimer *timer = [timers objectAtIndex:[[self.tableView indexPathForCell:cell] row]];
-        [cell.detailTextLabel setText:timer.intervalString];
-    }; 
 }
 
 @end

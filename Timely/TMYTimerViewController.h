@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TMYTimer.h"
+#import "TMYAppDelegate.h"
 
 @interface TMYTimerViewController : UIViewController <UITextFieldDelegate>
 // Because our font isn't monospaced, we want to control each digit seperately to retain that
@@ -19,9 +20,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *StartStopButton;
 @property (weak, nonatomic) IBOutlet UITextField *NameTextField;
 
+@property (weak, nonatomic) IBOutlet UIStepper *HoursStepper;
+
 @property (nonatomic, retain) TMYTimer *timer;
 
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *colon;
 
 - (IBAction)onStartStopButtonTouched:(id)sender;
 - (IBAction)onResetButtonTouched:(id)sender;
